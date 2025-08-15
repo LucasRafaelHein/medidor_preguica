@@ -35,5 +35,9 @@
       </div>
     </div>
   <% end %>
+  <div class="no-tasks" style="<%= 'display: none;' if @tasks.any? %>">
+    <p>Nenhuma tarefa cadastrada.</p>
+  </div>
+  <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn-logout" %>
 </div>
 

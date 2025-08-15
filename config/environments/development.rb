@@ -3,6 +3,11 @@
 require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
+  # Config do Devise
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # Permitir host do ngrok
+  # config.hosts.clear
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time

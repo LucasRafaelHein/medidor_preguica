@@ -48,6 +48,7 @@ gem 'bootsnap', require: false
 #
 #
 # Gems que vou usar na aplicação
+gem 'devise'
 gem 'rubocop', require: false
 gem 'rubocop-shopify', '~> 2.17', '>= 2.17.1'
 gem 'sassc-rails'
