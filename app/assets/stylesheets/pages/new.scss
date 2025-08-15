@@ -1,0 +1,72 @@
+/* ===== New Task Page ===== */
+.task-form-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 1rem auto;
+  max-width: 500px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #343a40;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #495057;
+  }
+
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1rem;
+    &:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+
+    .btn {
+      flex: 1;
+      text-align: center;
+      padding: 0.75rem 1rem;
+      border-radius: 25px;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s;
+
+      &.btn-submit {
+        background: #28a745;
+        &:hover {
+          background: #218838;
+        }
+      }
+
+      &.btn-back {
+        background: #6c757d;
+        &:hover {
+          background: #5a6268;
+        }
+      }
+    }
+  }
+}

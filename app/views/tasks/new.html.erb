@@ -1,9 +1,15 @@
-<h1>New task</h1>
+<div class="task-form-card">
+  <h2>Nova Tarefa</h2>
 
-<%= render "form", task: @task %>
+  <%= form_with(model: @task, local: true) do |form| %>
+    <div>
+      <%= form.label :task, "Descrição" %>
+      <%= form.text_field :task, placeholder: "Digite a tarefa..." %>
+    </div>
 
-<br>
-
-<div>
-  <%= link_to "Back to tasks", tasks_path %>
+    <div class="actions">
+      <%= form.submit "Criar", class: "btn btn-submit" %>
+      <%= link_to "Voltar", tasks_path, class: "btn btn-back" %>
+    </div>
+  <% end %>
 </div>

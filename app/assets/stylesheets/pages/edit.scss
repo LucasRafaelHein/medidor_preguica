@@ -1,0 +1,24 @@
+/* ===== Edit Task Page ===== */
+.task-form-card {
+  @extend .task-form-card; /* reutiliza estilos do new page */
+
+  h2 {
+    color: #007bff;
+  }
+
+  .actions {
+    .btn-submit {
+      background: #007bff;
+      &:hover {
+        background: #0069d9;
+      }
+    }
+
+    .btn-back {
+      background: #6c757d;
+      &:hover {
+        background: #5a6268;
+      }
+    }
+  }
+}

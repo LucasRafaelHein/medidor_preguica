@@ -30,20 +30,20 @@ A simple web application built with **Ruby on Rails** that allows you to create 
 
 ## Installation
 
-- 1. Clone the repository:
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/LucasRafaelHein/medidor_preguica.git
 cd medidor_preguica
 ```
 
-- 2. Install the gems:
+2. Install the gems:
 
 ```bash
 bundle install
 ```
 
-- 3. Create the database and run migrations:
+3. Create the database and run migrations:
 
 ```bash
 rails db:create

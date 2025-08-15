@@ -1,10 +1,30 @@
-<p style="color: green"><%= notice %></p>
+<div class="task-show-card">
+  <h2>Detalhes da Tarefa</h2>
 
-<%= render @task %>
+  <div class="task-info">
+    <strong>Descrição:</strong> <%= @task.task %>
+  </div>
 
-<div>
-  <%= link_to "Edit this task", edit_task_path(@task) %> |
-  <%= link_to "Back to tasks", tasks_path %>
+  <div class="lazy-meter">
+    <div class="lazy-meter-fill" style="width: <%= @task.preguica || 0 %>%;"></div>
+  </div>
+  <div class="lazy-meter-percentage">
+    Preguiça: <%= @task.preguica || 0 %>%
+  </div>
 
-  <%= button_to "Destroy this task", @task, method: :delete %>
+  <div class="actions">
+    <%= link_to "Editar", edit_task_path(@task), class: "btn btn-edit" %>
+    <%= link_to "Deletar", task_path(@task), method: :delete, data: { confirm: "Tem certeza? / Are you sure?" }, class: "btn btn-delete" %>
+    <%= link_to "Voltar", tasks_path, class: "btn btn-back" %>
+  </div>
 </div>
+
+<script>
+  // Pequena animação ao carregar a barra de preguiça
+  document.addEventListener("DOMContentLoaded", function() {
+    const fill = document.querySelector(".lazy-meter-fill");
+    const width = fill.style.width;
+    fill.style.width = "0%";
+    setTimeout(() => { fill.style.width = width; }, 100);
+  });
+</script>
