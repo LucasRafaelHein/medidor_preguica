@@ -1,0 +1,39 @@
+<div class="tasks-header">
+  <h1>Medidor de Preguiça</h1>
+  <%= link_to "Nova tarefa", new_task_path, class: "btn btn-new" %>
+</div>
+
+<div class="tasks-list">
+  <% @tasks.each do |task| %>
+    <div class="task-card">
+      <div class="task-info">
+        <strong><%= task[:nome] %></strong>
+      </div>
+
+      <% nivel = task[:preguica] || 0 %>
+      <div class="lazy-meter">
+        <div 
+          class="lazy-meter-fill <%= 
+            if nivel < 30
+              'low'
+            elsif nivel < 70
+              'medium'
+            else
+              'high'
+            end 
+          %>" 
+          style="width: <%= nivel %>%;">
+        </div>
+      </div>
+      <p class="lazy-meter-percentage"><%= nivel %>% preguiça</p>
+
+      <div class="actions">
+        <%= link_to "✏️ Editar", edit_task_path(task[:id]), class: "btn btn-edit" %>
+        <%= link_to "🗑 Excluir", task_path(task[:id]), 
+              data: { turbo_method: :delete, turbo_confirm: "Tem certeza?" }, 
+              class: "btn btn-delete" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+

@@ -1,0 +1,123 @@
+body {
+  background: #f6f7fb;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.tasks-header {
+  max-width: 700px;
+  margin: 2rem auto 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    font-size: 1.9rem;
+    font-weight: bold;
+    color: #333;
+  }
+}
+
+.tasks-list {
+  max-width: 700px;
+  margin: 0 auto;
+
+  .task-card {
+    background: white;
+    border-radius: 14px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    }
+
+    .task-info {
+      margin-bottom: 0.8rem;
+
+      strong {
+        font-size: 1.15rem;
+        color: #222;
+      }
+    }
+
+    .lazy-meter {
+      background: #eee;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 20px;
+      margin-bottom: 0.4rem;
+
+      .lazy-meter-fill {
+        height: 100%;
+        transition: width 0.5s ease;
+      }
+
+      .low {
+        background: linear-gradient(90deg, #4caf50, #81c784);
+      }
+
+      .medium {
+        background: linear-gradient(90deg, #ffb300, #ffd54f);
+      }
+
+      .high {
+        background: linear-gradient(90deg, #e53935, #ef5350);
+      }
+    }
+
+    .lazy-meter-percentage {
+      font-weight: bold;
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 0.8rem;
+    }
+
+    .actions {
+      display: flex;
+      gap: 0.5rem;
+
+      .btn {
+        padding: 0.45rem 0.9rem;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        color: white;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+      }
+
+      .btn-edit {
+        background: #ff9800;
+        &:hover { background: #e68900; }
+      }
+
+      .btn-delete {
+        background: #f44336;
+        &:hover { background: #d32f2f; }
+      }
+    }
+  }
+}
+
+.btn-new {
+  background: #4caf50;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  &:hover {
+    background: #43a047;
+  }
+}
